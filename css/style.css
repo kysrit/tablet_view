@@ -246,7 +246,7 @@ Travel
     border-style:solid;
 }
 
-@media (prefers-reduced-motion) {
+@media screen and (prefers-reduced-motion: reduce){
     .animated-element-Yellowstone {
         animation: none;
         background-image: url('images/yellowstone_cauldron.jpg');
@@ -343,5 +343,17 @@ padding: 5px;
 .current{
     color: black;
     background:#f1d74c;
+}
+nav ul li a:hover, nav ul li a:focus{
+    text-decoration : underline;
+    border: solid black 2px;
+}
 
+.mainbttn a{
+    position: absolute;
+    top: -40px;
+}
+
+.mainbttn a:focus{
+    top: 20px;
 }
