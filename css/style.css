@@ -13,7 +13,7 @@ main{
 nav{
     border: 2px red;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 }
 img{
     margin: 20px;
@@ -64,20 +64,35 @@ p{
     line-height: 20px;
 }
 
-a{
-    background-color:  rgb(190, 200, 201);
+
+
+.content-list{
+    display: none;
+}
+.content-list li{
+    width:50%;
+    text-align: center;
+    background-color: aliceblue;
+    text-transform: uppercase;
+    margin: 5px;
     padding: 10px;
-    margin-left: 20px;
+    border-color: rgb(76, 113, 116);
+    border-style: solid;
+    border-width: 2px;
+    font-size: 13px;
+
+}
+.content-list li a:focus{
+    text-decoration : underline;
+    border: solid black 2px;
+    background:#f1d74c;
+}
+.content-list li a:hover{
+    text-decoration : underline;
+    border: solid black 2px;
+    background:#f1d74c;
 }
 
-a{
-    text-transform: uppercase;
-}
-@media (max-width:768px){
-    #jump1{
-    display: none;
-    }
-}
 .petsdiv{
     text-align: center;
     border: blue;
@@ -86,13 +101,48 @@ a{
     text-align: center;
 }
 
+
+/*nav list*/
 .hz-list li{
     display:inline;
+    background-color:  rgb(190, 200, 201);
+    padding: 10px;
+    margin-left: 20px;
+    text-transform: uppercase;
 }
-.thumbnail{
-    border: #CC00AA;
-    border-radius: 5cm;
+
+.current{
+    color: black;
+    background:#4cbaf1;
+}       
+nav ul li a:hover, nav ul li a:focus{
+    text-decoration : underline;
+    border: solid black 2px;
+    background:#f1d74c;
 }
+
+.mainbttn a{
+    background-color: rgb(190, 200, 201);
+    left: 0;
+    padding: 6px;
+    z-index: 1;
+}
+
+.mainbttn a{
+    position: absolute;
+    top: -40px;
+}   
+
+.mainbttn a:focus{
+    position: absolute;
+    top: 20px;
+    background:#f1d74c;
+    text-decoration : underline;
+    border: solid black 2px;
+}
+
+
+
 
 .paragraph-grid{
     display:grid;
@@ -135,9 +185,24 @@ a{
     background-color: aliceblue;
     margin-bottom: 10px;
 }
-.thumbnail{
+.thumbnailmain{
+    border: #CC00AA;
+    border-radius: 5cm;
     max-width: 95%;
 }
+.thumbnail{
+    max-width: 95%;
+    width: 100px;
+    height: 100px;
+    
+    
+}
+.thumbnail img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /*
 RECIPE
 */
@@ -327,7 +392,7 @@ padding: 5px;
 .media3{
     margin: 20px;
     grid-column-start: 1;
-    grid-row-start: 3;
+    grid-row-start: 3;  
 }
 .media4{
     margin: 20px;
@@ -340,20 +405,122 @@ padding: 5px;
     grid-column-end: 4;
     grid-row-start: 4;
 }
-.current{
-    color: black;
-    background:#f1d74c;
-}
-nav ul li a:hover, nav ul li a:focus{
-    text-decoration : underline;
-    border: solid black 2px;
+
+
+
+
+
+
+/*phone*/
+@media (max-width:600px){
+    #jump1{
+    display: none;
+    }
+    .exit{
+        display: none;
+    }
+    .largepic{
+        display: none;
+    }
+    .thumbnail{
+        margin-top: 20px;
+        text-decoration: underline;
+        color: rgb(76, 113, 116);
+        border: solid 3px;
+        background-color: aliceblue;
+    }
+    #largeImg{
+        display: none;
+    }
+    #largeImg1{
+        display: none;
+    }
+    #largeImg2{
+        display: none;
+    }
+    #largeImg3{
+        display: none;
+    }
+    #largeImg4{
+        display: none;
+    }
+    #largeImg5{
+        display: none;
+    }
+    #largeImg6{
+        display: none;
+    }
+    .tablet{
+        display: none;
+    }
+
+    
 }
 
-.mainbttn a{
-    position: absolute;
-    top: -40px;
-}
+/*tablet*/
+@media (min-width: 600px){
+    .content-list{
+        display:flex;
+    }
+    .rowofpic{
+        background-color: aliceblue;
+        float: left;
+        width: 25%;
+    }
+    
+    .rowofpic img{
+        cursor:pointer;
+        margin: 10px;
+        padding: 0px;
+    }
+    
+    .rowofpic img:hover {
+        width: 50%;
+    }
+    
+    .rowofpicp{
+        background-color: aliceblue;
+        float: left;
+        width: 33.3333%;
+    }
+    
+    .rowofpicp img{
+        cursor:pointer;
+        margin: 10px;
+        padding: 0px;
+    }
+    
+    .rowofpicp img:hover {
+        width: 50%;
+    }
+    .container {
+        border: solid 3px  rgb(76, 113, 116);
+        margin: 25px;
+    }
+    .container:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .largepic {
+        position:relative;
+        display: none;
+        max-width:  80%;
+        left: 10%;
+        border: solid 10px  rgb(76, 113, 116);
+        padding: 50px;
+        justify-content: center;
+      }
+    
+      .exit {
+        position: absolute;
+        top: 95px;
+        right: 55px;
+        color: white;
+        background-color: black;
+        font-size: 35px;
+        cursor: pointer;
+      }
 
-.mainbttn a:focus{
-    top: 20px;
 }
